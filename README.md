@@ -1,4 +1,4 @@
-# Cyberpunk Workshop Overlord
+# A Cyberpunk Workshop
 
 A cyberpunk-themed incremental management game where you play as a Shadowy Overlord who never leaves their workshop. Deploy disposable Agents into a dangerous, not-so-distant, futuristic world. Observe the Agents' fights and loot acquisition from the safety of your growing workshop/lair. Then use the resources the Agents found for you to upgrade your workshop, perform research, and for loyal Agents, upgrade their Cyberware and Genetics.
 
