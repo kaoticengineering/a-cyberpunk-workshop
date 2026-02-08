@@ -3,6 +3,7 @@
 .import/
 ignore/
 *.uid
+*.import
 
 # Godot-specific
 *.translation
