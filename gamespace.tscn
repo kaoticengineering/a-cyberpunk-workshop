@@ -1,0 +1,169 @@
+[gd_scene load_steps=12 format=3 uid="uid://cx0tpjicfhes5"]
+
+[ext_resource type="Script" uid="uid://dxv44irnoal5y" path="res://Scripts/gamespace_layout.gd" id="1_4c22b"]
+[ext_resource type="PackedScene" uid="uid://c7m2xsllmx6jb" path="res://Scenes/ContentScenes/workshop.tscn" id="1_j6pi0"]
+[ext_resource type="PackedScene" uid="uid://bsgpk4nmojweg" path="res://Scenes/ContentScenes/agents.tscn" id="2_4c22b"]
+[ext_resource type="PackedScene" uid="uid://nvjurjji0dwq" path="res://Scenes/ContentScenes/deployments.tscn" id="3_f7ujr"]
+[ext_resource type="PackedScene" uid="uid://bca78o7f1m7c1" path="res://Scenes/ContentScenes/restart.tscn" id="4_537hy"]
+[ext_resource type="PackedScene" uid="uid://bf7qkw8b7tyw2" path="res://Scenes/ContentScenes/settings.tscn" id="5_krme1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dejb8"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.988235, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nc1rh"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.988235, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kd1f2"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0.0941176, 0.145098, 1)
+border_width_bottom = 4
+border_color = Color(0, 0.988235, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f261"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0.335372, 0.950694, 1.92523e-06, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crrsi"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Gamespace" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GamespacePanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dejb8")
+
+[node name="GamespaceLayout" type="HBoxContainer" parent="GamespacePanel"]
+layout_mode = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_4c22b")
+
+[node name="TabBarPanel" type="PanelContainer" parent="GamespacePanel/GamespaceLayout"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nc1rh")
+
+[node name="TabBar" type="VBoxContainer" parent="GamespacePanel/GamespaceLayout/TabBarPanel"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="WorkshopButton" type="Button" parent="GamespacePanel/GamespaceLayout/TabBarPanel/TabBar"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.411765, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_kd1f2")
+text = "Workshop"
+
+[node name="AgentsButton" type="Button" parent="GamespacePanel/GamespaceLayout/TabBarPanel/TabBar"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.411765, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_kd1f2")
+text = "Agents"
+
+[node name="DeploymentsButton" type="Button" parent="GamespacePanel/GamespaceLayout/TabBarPanel/TabBar"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.411765, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_kd1f2")
+text = "Deployments"
+
+[node name="RestartButton" type="Button" parent="GamespacePanel/GamespaceLayout/TabBarPanel/TabBar"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.411765, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_kd1f2")
+text = "Restart"
+
+[node name="SettingsButton" type="Button" parent="GamespacePanel/GamespaceLayout/TabBarPanel/TabBar"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.411765, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_kd1f2")
+text = "Settings"
+
+[node name="InfoBarPanel" type="PanelContainer" parent="GamespacePanel/GamespaceLayout"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6f261")
+
+[node name="InfoBar" type="VBoxContainer" parent="GamespacePanel/GamespaceLayout/InfoBarPanel"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="ContentPanel" type="PanelContainer" parent="GamespacePanel/GamespaceLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_crrsi")
+
+[node name="Workshop" parent="GamespacePanel/GamespaceLayout/ContentPanel" instance=ExtResource("1_j6pi0")]
+visible = false
+layout_mode = 2
+
+[node name="Agents" parent="GamespacePanel/GamespaceLayout/ContentPanel" instance=ExtResource("2_4c22b")]
+visible = false
+layout_mode = 2
+
+[node name="Deployments" parent="GamespacePanel/GamespaceLayout/ContentPanel" instance=ExtResource("3_f7ujr")]
+visible = false
+layout_mode = 2
+
+[node name="Restart" parent="GamespacePanel/GamespaceLayout/ContentPanel" instance=ExtResource("4_537hy")]
+visible = false
+layout_mode = 2
+
+[node name="Settings" parent="GamespacePanel/GamespaceLayout/ContentPanel" instance=ExtResource("5_krme1")]
+layout_mode = 2
+
+[connection signal="pressed" from="GamespacePanel/GamespaceLayout/TabBarPanel/TabBar/WorkshopButton" to="GamespacePanel/GamespaceLayout" method="_switch_tab" binds= ["Workshop"]]
+[connection signal="pressed" from="GamespacePanel/GamespaceLayout/TabBarPanel/TabBar/AgentsButton" to="GamespacePanel/GamespaceLayout" method="_switch_tab" binds= ["Agents"]]
+[connection signal="pressed" from="GamespacePanel/GamespaceLayout/TabBarPanel/TabBar/DeploymentsButton" to="GamespacePanel/GamespaceLayout" method="_switch_tab" binds= ["Deployments"]]
+[connection signal="pressed" from="GamespacePanel/GamespaceLayout/TabBarPanel/TabBar/RestartButton" to="GamespacePanel/GamespaceLayout" method="_switch_tab" binds= ["Restart"]]
+[connection signal="pressed" from="GamespacePanel/GamespaceLayout/TabBarPanel/TabBar/SettingsButton" to="GamespacePanel/GamespaceLayout" method="_switch_tab" binds= ["Settings"]]
